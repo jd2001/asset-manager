@@ -1,0 +1,13 @@
+<%= form_for @business_asset do |f| %>
+  <% if @business_asset.errors.any? %>
+    <div><%= @business_asset.errors.full_messages %></div>
+  <% end %>
+  <div><%= f.text_field :asset_code %></div>
+  <div><%= f.number_field :cost %></div>
+  <div><%= f.text_field :cost_type %></div>
+  <div><%= f.text_field :name %></div>
+  <div><%= f.collection_select :host_type_id, HostType.all, :id, :name %>
+  <div><%= f.collection_select :info_type_id, InfoType.all, :id, :name %>
+  <div><%= f.collection_select :priority_id, Priority.all, :id, :name %>
+  <div><%= f.submit %></div>
+<% end %>
