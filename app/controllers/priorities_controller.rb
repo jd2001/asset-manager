@@ -21,7 +21,7 @@ class PrioritiesController < ApplicationController
     if @priority.update(priority_params)
       redirect_to home_path, notice: "Priority created"
     else
-      render 'new', status: :unprocessable_entity
+      render 'edit', status: :unprocessable_entity
     end
   end
 

@@ -21,7 +21,7 @@ class InfoTypesController < ApplicationController
     if @info_type.update(info_type_params)
       redirect_to home_path, notice: "Info type created"
     else
-      render 'new', status: :unprocessable_entity
+      render 'edit', status: :unprocessable_entity
     end
   end
 

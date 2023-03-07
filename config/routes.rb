@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :host_types
   resources :info_types
   resources :priorities
+  resources :companies
 
   get 'home', to: 'settings#home'
 

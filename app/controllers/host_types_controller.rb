@@ -21,7 +21,7 @@ class HostTypesController < ApplicationController
     if @host_type.update(host_type_params)
       redirect_to home_path, notice: "Host type created"
     else
-      render 'new', status: :unprocessable_entity
+      render 'edit', status: :unprocessable_entity
     end
   end
 
