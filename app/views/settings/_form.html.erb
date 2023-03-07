@@ -1,0 +1,9 @@
+<% if ['HostType', 'InfoType', 'Priority'].include?(item.class.name) %>
+  <%= form_for item do |f| %>
+    <% if item.errors.any? %>
+      <div><%= item.errors.full_messages %></div>
+    <% end %>
+    <div><%= f.text_field :name %></div>
+    <div><%= f.submit %></div>
+  <% end %>
+<% end %>

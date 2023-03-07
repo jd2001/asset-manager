@@ -1,0 +1,30 @@
+
+<h2> Settings </h2>
+
+<div>
+  <h3> Host Types </h3>
+  <div> <%= link_to 'New', new_host_type_path %> </div>
+  <% @host_types.each do |i| %>
+    <h4> <%= link_to i.name, edit_host_type_path(i) %> </h4>
+  <% end %>
+</div>
+
+<br>
+
+<div>
+  <h3> Info Types </h3>
+  <div> <%= link_to 'New', new_info_type_path %> </div>
+  <% @info_types.each do |i| %>
+    <h4> <%= link_to i.name, edit_info_type_path(i) %> </h4>
+  <% end %>
+</div>
+
+<br>
+
+<div>
+  <h3> Priorities </h3>
+  <div> <%= link_to 'New', new_priority_path %> </div>
+  <% @priorities.each do |i| %>
+    <h4> <%= link_to i.name, edit_priority_path(i) %> </h4>
+  <% end %>
+</div>
