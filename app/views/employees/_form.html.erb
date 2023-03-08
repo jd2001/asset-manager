@@ -1,0 +1,15 @@
+<% @company_id ||= params[:company_id] %>
+
+<%= form_for @employee do |f| %>
+  <% if @employee.errors.any? %>
+    <div><%= @employee.errors.full_messages %></div>
+  <% end %>
+  <div><%= f.text_field :first_name %></div>
+  <div><%= f.text_field :surname %></div>
+  <div><%= f.text_field :email %></div>
+  <div><%= f.text_field :phone_number %></div>
+  <%= f.hidden_field :company_id, value: @company_id %>
+  <div><%= f.submit %></div>
+
+<% params %>
+<% end %>

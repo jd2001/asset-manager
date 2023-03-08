@@ -18,6 +18,7 @@ class CompaniesController < ApplicationController
 
   def edit
     @company = Company.find(params[:id])
+    @employees = Employee.where(company_id: @company.id)
   end
 
   def update

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'employees/index'
+  get 'employees/new'
+  get 'employees/edit'
   root "business_assets#index"
   
   resources :business_assets
@@ -6,6 +9,7 @@ Rails.application.routes.draw do
   resources :info_types
   resources :priorities
   resources :companies
+  resources :employees
 
   get 'home', to: 'settings#home'
 

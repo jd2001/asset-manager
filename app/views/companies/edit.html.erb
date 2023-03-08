@@ -1,1 +1,9 @@
 <%= render partial: 'companies/form' %>
+<br>
+<h3>Employees</h3>
+<%= link_to 'Add Employee', new_employee_path(company_id: @company.id) %>
+<% if @employees.any? %>
+  <% @employees.each do |i| %>
+    <h4><%= link_to i.full_name, edit_employee_path(i) %></h4>
+  <% end %>
+<% end %>
