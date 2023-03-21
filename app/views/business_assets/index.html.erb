@@ -4,6 +4,9 @@
 
 <div>
   <% @business_assets.each do |i| %>
-    <h4> <%= link_to i.name, edit_business_asset_path(i) %> <%= link_to 'Delete', business_asset_path(i), data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %> </h4>
+    <h4> 
+      <%= link_to i.name, edit_business_asset_path(i) %> 
+      <%= link_to 'Delete', business_asset_path(i), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> 
+    </h4>
   <% end %>
 </div>
