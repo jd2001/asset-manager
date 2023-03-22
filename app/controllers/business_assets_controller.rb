@@ -1,7 +1,4 @@
 class BusinessAssetsController < ApplicationController
-  load_resource
-  authorize_resource
-  
   def new
     @business_asset = BusinessAsset.new
   end
