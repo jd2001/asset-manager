@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   check_authorization unless: :devise_controller?
-  load_and_authorize_resource except: :home
+  load_and_authorize_resource except: :home, unless: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.present?
