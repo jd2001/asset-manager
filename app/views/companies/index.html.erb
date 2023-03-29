@@ -1,9 +1,22 @@
-<%= link_to 'New Company', new_company_path %>
-
-<br>
-
-<div>
-  <% @companies.each do |i| %>
-    <h4> <%= link_to i.name, edit_company_path(i) %> </h4>
-  <% end %>
+<div class="h-screen flex">
+  <%= render partial: 'shared/navbar' %>
+  <div class="w-5/6 bg-gray-600 grid grid-cols-4 grid-rows-4 gap-4 p-4">
+    <div class="bg-gray-200 rounded shadow-lg">
+      <div class="p-2">
+        <h4 class="bg-gray-300 rounded p-2"> <%= link_to 'New Company', new_company_path %> </h4>
+      </div>
+    </div>
+    <% @companies.each do |i| %>
+      <div class="bg-gray-200 rounded shadow-lg">
+        <div class="p-2">
+          <h4 class="bg-gray-300 rounded p-2"> 
+            <%= link_to i.name, edit_company_path(i), class: "#{ 'disabled' if !current_user.admin? }" %>
+            <% if current_user.admin? %>
+              <%= link_to 'Delete', company_path(i), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            <% end %>
+          </h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

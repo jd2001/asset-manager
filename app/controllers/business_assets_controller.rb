@@ -1,4 +1,9 @@
 class BusinessAssetsController < ApplicationController
+  def index
+    @page = 'Assets'
+    @business_assets = BusinessAsset.all
+  end
+  
   def new
     @business_asset = BusinessAsset.new
   end
@@ -10,10 +15,6 @@ class BusinessAssetsController < ApplicationController
     else
       render 'new', status: :unprocessable_entity
     end
-  end
-  
-  def index
-    @business_assets = BusinessAsset.all
   end
 
   def edit

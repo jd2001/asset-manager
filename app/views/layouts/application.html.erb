@@ -11,13 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="font-mono">
     <% flash.each do |type, msg| %>
       <div>
         <%= msg %>
       </div>
     <% end %>
-    <%= render partial: 'layouts/navbar' %>
     <%= yield %>
   </body>
 </html>

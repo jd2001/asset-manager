@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   def index
+    @page = 'Companies'
     @companies = Company.all
   end
 
@@ -27,6 +28,15 @@ class CompaniesController < ApplicationController
       redirect_to companies_path, notice: 'Company updated'
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    @company = Company.find(params[:id])
+    if @company.destroy
+      redirect_to :root, notice: "Asset deleted"
+    else
+      redirect_to :root
     end
   end
 
