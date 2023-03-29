@@ -34,7 +34,7 @@ class CompaniesController < ApplicationController
   def destroy
     @company = Company.find(params[:id])
     if @company.destroy
-      redirect_to :root, notice: "Asset deleted"
+      redirect_to :root, notice: "Company deleted"
     else
       redirect_to :root
     end

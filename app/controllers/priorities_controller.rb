@@ -25,6 +25,15 @@ class PrioritiesController < ApplicationController
     end
   end
 
+  def destroy
+    @priority = Priority.find(params[:id])
+    if @priority.destroy
+      redirect_to :home_path, notice: "Priority deleted"
+    else
+      redirect_to :home_path
+    end
+  end
+
   private
 
   def priority_params

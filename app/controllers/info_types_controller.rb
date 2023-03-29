@@ -25,6 +25,15 @@ class InfoTypesController < ApplicationController
     end
   end
 
+  def destroy
+    @info_type = InfoType.find(params[:id])
+    if @info_type.destroy
+      redirect_to :home_path, notice: "Info Type deleted"
+    else
+      redirect_to :home_path
+    end
+  end
+
   private
 
   def info_type_params
