@@ -8,7 +8,7 @@ class PrioritiesController < ApplicationController
     if @priority.save
       redirect_to home_path, notice: "Priority created"
     else
-      render 'new', status: :unprocessable_entity
+      render home_path, status: :unprocessable_entity
     end
   end
 
@@ -21,7 +21,7 @@ class PrioritiesController < ApplicationController
     if @priority.update(priority_params)
       redirect_to home_path, notice: "Priority created"
     else
-      render 'edit', status: :unprocessable_entity
+      render home_path, status: :unprocessable_entity
     end
   end
 
@@ -30,7 +30,7 @@ class PrioritiesController < ApplicationController
     if @priority.destroy
       redirect_to :home_path, notice: "Priority deleted"
     else
-      redirect_to :home_path
+      redirect_to home_path
     end
   end
 

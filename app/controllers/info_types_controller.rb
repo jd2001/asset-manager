@@ -8,7 +8,7 @@ class InfoTypesController < ApplicationController
     if @info_type.save
       redirect_to home_path, notice: "Info type created"
     else
-      render 'new', status: :unprocessable_entity
+      render home_path, status: :unprocessable_entity
     end
   end
 
@@ -21,7 +21,7 @@ class InfoTypesController < ApplicationController
     if @info_type.update(info_type_params)
       redirect_to home_path, notice: "Info type created"
     else
-      render 'edit', status: :unprocessable_entity
+      render home_path, status: :unprocessable_entity
     end
   end
 
@@ -30,7 +30,7 @@ class InfoTypesController < ApplicationController
     if @info_type.destroy
       redirect_to :home_path, notice: "Info Type deleted"
     else
-      redirect_to :home_path
+      redirect_to home_path
     end
   end
 

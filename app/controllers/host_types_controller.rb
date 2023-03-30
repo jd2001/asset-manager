@@ -8,7 +8,7 @@ class HostTypesController < ApplicationController
     if @host_type.save
       redirect_to home_path, notice: "Host Type created"
     else
-      render 'new', status: :unprocessable_entity
+      render home_path, status: :unprocessable_entity
     end
   end
 
@@ -21,7 +21,7 @@ class HostTypesController < ApplicationController
     if @host_type.update(host_type_params)
       redirect_to home_path, notice: "Host Type created"
     else
-      render 'edit', status: :unprocessable_entity
+      render home_path, status: :unprocessable_entity
     end
   end
 
@@ -30,7 +30,7 @@ class HostTypesController < ApplicationController
     if @host_type.destroy
       redirect_to :home_path, notice: "Host Type deleted"
     else
-      redirect_to :home_path
+      redirect_to home_path
     end
   end
 
