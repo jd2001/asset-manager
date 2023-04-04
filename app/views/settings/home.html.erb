@@ -86,44 +86,6 @@
           </div>
         </div>
       </div>
-      <div class="flex-none w-1/3">
-        <div class="p-1">
-          <div class="bg-gray-200 rounded shadow-lg">
-            <div class="p-2">
-              <h4 class="bg-gray-300 rounded p-2"> <%= link_to 'New Info Type', new_info_type_path %> </h4>
-            </div>
-            <% @info_types.each do |i| %>
-              <div class="p-2">
-                <h4 class="bg-gray-300 rounded p-2"> 
-                  <%= link_to i.name, edit_info_type_path(i), class: "#{ 'disabled' if !current_user.admin? }" %>
-                  <% if current_user.admin? %>
-                    <%= link_to 'Delete', info_type_path(i), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-                  <% end %>
-                </h4>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="flex-none w-1/3">
-        <div class="p-1">
-          <div class="bg-gray-200 rounded shadow-lg">
-            <div class="p-2">
-              <h4 class="bg-gray-300 rounded p-2"> <%= link_to 'New Priority', new_priority_path %> </h4>
-            </div>
-            <% @priorities.each do |i| %>
-              <div class="p-2">
-                <h4 class="bg-gray-300 rounded p-2"> 
-                  <%= link_to i.name, edit_priority_path(i), class: "#{ 'disabled' if !current_user.admin? }" %>
-                  <% if current_user.admin? %>
-                    <%= link_to 'Delete', priority_path(i), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-                  <% end %>
-                </h4>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
