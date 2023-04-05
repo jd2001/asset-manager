@@ -1,5 +1,3 @@
-
-
 <div class="h-screen flex">
   <%= render partial: 'shared/navbar' %>
   <div class="w-5/6 bg-gray-600 p-1">
@@ -13,38 +11,38 @@
           <div class="flex px-3">
             <div class="w-1/2 px-2 py-2">
               <div class="text-sm pl-1">Asset Code</div>
-              <%= f.text_field :asset_code, class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 shadow-sm" %>
+              <%= f.text_field :asset_code, class: "form-field" %>
             </div>
             <div class="w-1/2 px-2 py-2">
               <div class="text-sm pl-1">Name</div>
-              <%= f.text_field :name, class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 shadow-sm" %>
+              <%= f.text_field :name, class: "form-field" %>
             </div>
           </div>
           <div class="flex px-3">
             <div class="w-1/2 px-2 p-2">
               <div class="text-sm pl-1">Cost</div>
-              <%= f.number_field :cost, class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 shadow-sm" %>
+              <%= f.number_field :cost, class: "form-field" %>
             </div>
             <div class="w-1/2 px-2 p-2">
               <div class="text-sm pl-1">Cost Type</div>
-              <%= f.text_field :cost_type, class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 shadow-sm" %>
+              <%= f.text_field :cost_type, class: "form-field" %>
             </div>
           </div>
           <div class="flex px-3">
             <div class="w-1/3 px-2 p-2">
               <div class="text-sm pl-1">Host Type</div>
-              <%= f.collection_select(:host_type_id, HostType.all, :id, :name, {}, { class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 shadow-sm" }) %>
+              <%= f.collection_select(:host_type_id, HostType.all, :id, :name, {}, { class: "form-field" }) %>
             </div>
             <div class="w-1/3 px-2 p-2">
               <div class="text-sm pl-1">Info Type</div>
-              <%= f.collection_select(:info_type_id, InfoType.all, :id, :name, {}, { class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 shadow-sm" }) %>
+              <%= f.collection_select(:info_type_id, InfoType.all, :id, :name, {}, { class: "form-field" }) %>
             </div>
             <div class="w-1/3 px-2 p-2">
               <div class="text-sm pl-1">Priority</div>
-              <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, { class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 shadow-sm" }) %>
+              <%= f.collection_select(:priority_id, Priority.all, :id, :name, {}, { class: "form-field" }) %>
             </div>
           </div>
-          <div class="px-5 py-3"><%= f.submit "Update Asset", class: "block rounded-lg px-2 py-1 bg-slate-500 text-gray-100 hover:bg-slate-400 hover:font-bold" %></div>
+          <div class="px-5 py-3"><%= f.submit "Submit", class: "block rounded-lg px-2 py-1 bg-slate-500 text-gray-100 hover:bg-slate-400 hover:font-bold" %></div>
         <% end %>
       </div>
     </div>

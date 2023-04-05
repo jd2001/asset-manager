@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
   def new
+    @company_id = params[:company_id]
     @employee = Employee.new
   end
 
@@ -23,6 +24,15 @@ class EmployeesController < ApplicationController
       redirect_to edit_company_path(@employee.company), notice: "Employee updated"
     else
       render 'edit', status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @employee = Employee.find(params[:id])
+    if @employee.destroy
+      redirect_to edit_company_path(@employee.company), notice: "Employee deleted"
+    else
+      redirect_to edit_company_path(@employee.company)
     end
   end
 

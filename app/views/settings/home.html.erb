@@ -7,7 +7,7 @@
           <div class="bg-gray-200 rounded shadow-lg">
             <div class="relative mt-2 rounded-md shadow-sm p-2">
               <%= form_for :host_type, as: :post, url: host_types_path(:host_type) do |f| %>
-                <%= f.text_field :name, class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", placeholder: 'New Host Type' %>
+                <%= f.text_field :name, class: "form-field", placeholder: 'New Host Type' %>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                   <%= f.submit '+', class: "rounded bg-slate-200 px-2 border-2 border-slate-300 hover:bg-slate-100 hover:text-slate-500 hover:font-bold hover:border-slate-200" %>
                 </div>
@@ -35,7 +35,7 @@
           <div class="bg-gray-200 rounded shadow-lg">
             <div class="relative mt-2 rounded-md shadow-sm p-2">
               <%= form_for :info_type, as: :post, url: info_types_path(:info_type) do |f| %>
-                <%= f.text_field :name, class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", placeholder: 'New Info Type' %>
+                <%= f.text_field :name, class: "form-field", placeholder: 'New Info Type' %>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                   <%= f.submit '+', class: "rounded bg-slate-200 px-2 border-2 border-slate-300 hover:bg-slate-100 hover:text-slate-500 hover:font-bold hover:border-slate-200" %>
                 </div>
@@ -63,7 +63,7 @@
           <div class="bg-gray-200 rounded shadow-lg">
             <div class="relative mt-2 rounded-md shadow-sm p-2">
               <%= form_for :priority, as: :post, url: priority_path(:info_type) do |f| %>
-                <%= f.text_field :name, class: "block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", placeholder: 'New Priority' %>
+                <%= f.text_field :name, class: "form-field", placeholder: 'New Priority' %>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                   <%= f.submit '+', class: "rounded bg-slate-200 px-2 border-2 border-slate-300 hover:bg-slate-100 hover:text-slate-500 hover:font-bold hover:border-slate-200" %>
                 </div>
