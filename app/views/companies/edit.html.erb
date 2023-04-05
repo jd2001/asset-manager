@@ -1,9 +1,25 @@
-<%= render partial: 'companies/form' %>
-<br>
-<h3>Employees</h3>
-<%= link_to 'Add Employee', new_employee_path(company_id: @company.id) %>
-<% if @employees.any? %>
-  <% @employees.each do |i| %>
-    <h4><%= link_to i.full_name, edit_employee_path(i) %></h4>
-  <% end %>
-<% end %>
+<div class="h-screen flex">
+  <%= render partial: 'shared/navbar' %>
+  <div class="w-5/6 bg-gray-600 p-1">
+    <%= render partial: 'companies/form' %>
+    <div class="flex grid grid-cols-4 grid-rows-4 gap-4 p-2">
+      <div class="bg-gray-200 rounded shadow-lg">
+        <div class="p-2">
+          <h4 class="bg-gray-300 rounded p-2"> <%= link_to 'New Employee', new_employee_path(company_id: @company.id) %> </h4>
+        </div>
+      </div>
+      <% @employees.each do |i| %>
+        <div class="bg-gray-200 rounded shadow-lg">
+          <div class="p-2">
+            <h4 class="bg-gray-300 rounded p-2"> 
+              <%= link_to i.full_name, edit_employee_path(i), class: "#{ 'disabled' if !current_user.admin? }" %>
+              <% if current_user.admin? %>
+                <%= link_to 'Delete', employee_path(i), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <% end %>
+            </h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
