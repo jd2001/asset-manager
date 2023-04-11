@@ -1,7 +1,7 @@
 class BusinessAssetsController < ApplicationController
   def index
     @page = 'Assets'
-    @business_assets = BusinessAsset.all
+    @business_assets = BusinessAsset.all.order(:name)
   end
   
   def new

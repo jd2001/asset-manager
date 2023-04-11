@@ -16,6 +16,44 @@
             <% end %>
           </h4>
         </div>
+        <div class="text-sm px-1">
+          <div class="flex w-full">
+            <div class="w-1/2 p-1">
+              <div class="bg-gray-100 rounded p-1 text-gray-700 shadow-sm">
+                <%= i.asset_code %>
+              </div>
+            </div>
+            <div class="w-1/2 p-1">
+              <div class="bg-gray-100 rounded p-1 text-gray-700 shadow-sm">
+                <%= i.cost %>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full">
+            <div class="w-1/2 p-1">
+              <div class="bg-gray-100 rounded p-1 text-gray-700 shadow-sm">
+                <%= i.cost_type %>
+              </div>
+            </div>
+            <div class="w-1/2 p-1">
+              <div class="bg-gray-100 rounded p-1 text-gray-700 shadow-sm">
+                <%= i.host_type.name %>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full">
+            <div class="w-1/2 p-1">
+              <div class="bg-gray-100 rounded p-1 text-gray-700 shadow-sm">
+                <%= i.info_type.name %>
+              </div>
+            </div>
+            <div class="w-1/2 p-1">
+              <div class="bg-gray-100 rounded p-1 text-gray-700 shadow-sm">
+                <%= i.priority.name %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
