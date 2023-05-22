@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :priorities
   resources :companies
   resources :employees
+  resources :accesses
 
   get 'home', to: 'settings#home'
 

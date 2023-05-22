@@ -19,6 +19,7 @@ class BusinessAssetsController < ApplicationController
 
   def edit
     @business_asset = BusinessAsset.find(params[:id])
+    @employees = Employee.where(id: @business_asset.accesses.pluck(:employee_id))
   end
 
   def update

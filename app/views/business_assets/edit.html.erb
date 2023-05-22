@@ -1,1 +1,31 @@
-<%= render partial: 'form' %>
+<div class="h-screen flex">
+  <%= render partial: 'shared/navbar' %>
+  <div class="w-5/6 bg-gray-600 p-1">
+    <%= render partial: 'form' %>
+    <div class="flex grid grid-cols-3 xl:grid-cols-4 grid-rows-4 gap-4 p-2">
+      <div class="bg-gray-200 rounded shadow-lg">
+        <div class="p-2">
+          <%= form_for :access, url: accesses_path, method: :post do |f| %>
+            <div class="flex">
+              <div class="w-5/6"><%= f.collection_select(:employee_id, Employee.all, :id, :full_name, {}, { class: "form-field"}) %></div>
+              <%= f.hidden_field :business_asset_id, value: @business_asset.id %>
+              <div class="w-1/6 pl-1"><%= f.submit "+", class: "p-1 rounded bg-slate-200 px-2 border-2 border-gray-400 hover:bg-slate-100 hover:text-slate-400 hover:font-bold hover:border-gray-200" %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% @employees.each do |i| %>
+        <div class="bg-gray-200 rounded shadow-lg">
+          <div class="p-2">
+            <h4 class="bg-gray-300 rounded p-2"> 
+              <%= link_to i.full_name, edit_employee_path(i), class: "#{ 'disabled' if !current_user.admin? }" %>
+              <% if current_user.admin? %>
+                <%= link_to 'Delete', access_path(Access.where(employee_id: i.id, business_asset_id: @business_asset.id).last), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <% end %>
+            </h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
