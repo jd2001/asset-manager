@@ -62,7 +62,7 @@
         <div class="p-1">
           <div class="bg-gray-200 rounded shadow-lg">
             <div class="relative mt-2 rounded-md shadow-sm p-2">
-              <%= form_for :priority, as: :post, url: priority_path(:info_type) do |f| %>
+              <%= form_for :priority, as: :post, url: priorities_path(:priority) do |f| %>
                 <%= f.text_field :name, class: "form-field", placeholder: 'New Priority' %>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                   <%= f.submit '+', class: "rounded bg-slate-200 px-2 border-2 border-slate-300 hover:bg-slate-100 hover:text-slate-500 hover:font-bold hover:border-slate-200" %>
