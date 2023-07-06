@@ -1,14 +1,17 @@
 <div class="h-screen flex">
   <%= render partial: 'shared/navbar' %>
-  <div class="w-5/6 bg-gray-600 grid grid-cols-3 grid-rows-4 gap-4 p-4">
-    <div class="bg-gray-200 rounded shadow-lg">
-      <div class="p-2">
-        <h4 class="bg-gray-300 rounded p-2"> <%= link_to 'New Asset', new_business_asset_path %> </h4>
+  <div class="w-5/6 bg-gray-600">
+    <%= render partial: 'filters' %>
+    <div class="grid grid-cols-3 grid-rows-4 gap-4 p-4">
+      <div class="bg-gray-200 rounded shadow-lg">
+        <div class="p-2">
+          <h4 class="bg-gray-300 rounded p-2"> <%= link_to 'New Asset', new_business_asset_path %> </h4>
+        </div>
       </div>
+      <% @business_assets.each do |i| %>
+        <%= render partial: 'template', locals: { asset: i } %>
+      <% end %>
     </div>
-    <% @business_assets.each do |i| %>
-      <%= render partial: 'template', locals: { asset: i } %>
-    <% end %>
   </div>
 </div>
 

@@ -9,4 +9,9 @@ class BusinessAsset < ApplicationRecord
 
   validates :asset_code, presence: true
   validates :name, presence: true
+
+  scope :filter_by_name, -> (name) { where('business_assets.name ILIKE :name', name: name) }
+  scope :filter_by_host_type, -> (host_type_id) { where(host_type_id: host_type_id) }
+  scope :filter_by_info_type, -> (info_type_id) { where(info_type_id: info_type_id) }
+  scope :filter_by_priority, -> (priority_id) { where(priority_id: priority_id) }
 end
