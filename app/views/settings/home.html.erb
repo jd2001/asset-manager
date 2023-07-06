@@ -9,7 +9,7 @@
               <%= form_for :host_type, as: :post, url: host_types_path(:host_type) do |f| %>
                 <%= f.text_field :name, class: "form-field", placeholder: 'New Host Type' %>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                  <%= f.submit '+', class: "rounded bg-slate-200 px-2 border-2 border-slate-300 hover:bg-slate-100 hover:text-slate-500 hover:font-bold hover:border-slate-200" %>
+                  <%= f.submit '+', class: "btn-add" %>
                 </div>
               <% end %>
             </div>
@@ -20,8 +20,8 @@
                     <%= link_to i.name, edit_host_type_path(i), class: "text-gray-700 hover:text-gray-500 #{ 'disabled' if !current_user.admin? }" %>
                   </div>
                   <div class="w-1/6 pr-1 text-right">
-                    <% if current_user.admin? %>
-                      <%= link_to '-', host_type_path(i), class: "p-1 rounded bg-slate-200 px-2 border-2 border-gray-400 hover:bg-slate-100 hover:text-slate-400 hover:font-bold hover:border-gray-200", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                    <% if current_user.admin? && !i.business_assets.any? %>
+                      <%= link_to '-', host_type_path(i), class: "btn-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, disabled: true %>
                     <% end %>
                   </div>
                 </div>
@@ -37,7 +37,7 @@
               <%= form_for :info_type, as: :post, url: info_types_path(:info_type) do |f| %>
                 <%= f.text_field :name, class: "form-field", placeholder: 'New Info Type' %>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                  <%= f.submit '+', class: "rounded bg-slate-200 px-2 border-2 border-slate-300 hover:bg-slate-100 hover:text-slate-500 hover:font-bold hover:border-slate-200" %>
+                  <%= f.submit '+', class: "btn-add" %>
                 </div>
               <% end %>
             </div>
@@ -48,8 +48,8 @@
                     <%= link_to i.name, edit_info_type_path(i), class: "text-gray-700 hover:text-gray-500 #{ 'disabled' if !current_user.admin? }" %>
                   </div>
                   <div class="w-1/6 pr-1 text-right">
-                    <% if current_user.admin? %>
-                      <%= link_to '-', info_type_path(i), class: "p-1 rounded bg-slate-200 px-2 border-2 border-gray-400 hover:bg-slate-100 hover:text-slate-400 hover:font-bold hover:border-gray-200", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                    <% if current_user.admin? && !i.business_assets.any? %>
+                      <%= link_to '-', info_type_path(i), class: "btn-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
                     <% end %>
                   </div>
                 </div>
@@ -65,7 +65,7 @@
               <%= form_for :priority, as: :post, url: priorities_path(:priority) do |f| %>
                 <%= f.text_field :name, class: "form-field", placeholder: 'New Priority' %>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                  <%= f.submit '+', class: "rounded bg-slate-200 px-2 border-2 border-slate-300 hover:bg-slate-100 hover:text-slate-500 hover:font-bold hover:border-slate-200" %>
+                  <%= f.submit '+', class: "btn-add" %>
                 </div>
               <% end %>
             </div>
@@ -76,8 +76,8 @@
                     <%= link_to i.name, edit_priority_path(i), class: "text-gray-700 hover:text-gray-500 #{ 'disabled' if !current_user.admin? }" %>
                   </div>
                   <div class="w-1/6 pr-1 text-right">
-                    <% if current_user.admin? %>
-                      <%= link_to '-', priority_path(i), class: "p-1 rounded bg-slate-200 px-2 border-2 border-gray-400 hover:bg-slate-100 hover:text-slate-400 hover:font-bold hover:border-gray-200", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                    <% if current_user.admin? && !i.business_assets.any? %>
+                      <%= link_to '-', priority_path(i), class: "btn-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
                     <% end %>
                   </div>
                 </div>

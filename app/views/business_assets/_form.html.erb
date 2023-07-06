@@ -22,7 +22,7 @@
         </div>
         <div class="w-1/2 px-2 p-2">
           <div class="text-sm pl-1">Cost Type</div>
-          <%= f.text_field :cost_type, class: "form-field" %>
+          <%= f.select(:cost_type, BusinessAsset::COST_TYPES, {}, { class: "form-field" }) %>
         </div>
       </div>
       <div class="flex px-3">

@@ -5,6 +5,8 @@ class BusinessAsset < ApplicationRecord
   has_many :accesses
   # has_many :employees, through: :accesses
 
+  COST_TYPES = [['Monthly', 'monthly'], ['Yearly', 'yearly']]
+
   validates :asset_code, presence: true
   validates :name, presence: true
 end

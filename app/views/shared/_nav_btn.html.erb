@@ -1,5 +1,5 @@
 <div class="pt-1">
-  <div class="w-full py-3 text-center <%= page != @page ? 'bg-gray-800 text-gray-300 hover:bg-slate-600 hover:text-slate-200 hover:font-bold' : 'bg-slate-700 text-gray-300 font-bold' %>">
+  <div class="w-full py-3 text-left pl-4 <%= page != @page ? 'bg-gray-800 text-gray-300 hover:bg-slate-600 hover:text-slate-200 hover:font-bold' : 'bg-slate-700 text-gray-300 font-bold' %>">
     <%= page != @page ? (link_to page, path) : page %>
   </div>
 </div>

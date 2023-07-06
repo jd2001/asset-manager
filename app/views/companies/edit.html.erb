@@ -11,10 +11,14 @@
       <% @employees.each do |i| %>
         <div class="bg-gray-200 rounded shadow-lg">
           <div class="p-2">
-            <h4 class="bg-gray-300 rounded p-2"> 
-              <%= link_to i.full_name, edit_employee_path(i), class: "#{ 'disabled' if !current_user.admin? }" %>
+            <h4 class="flex bg-gray-300 rounded p-2"> 
+              <div class="w-5/6">
+                <%= link_to i.full_name, edit_employee_path(i), class: "#{ 'disabled' if !current_user.admin? }" %>
+              </div>
               <% if current_user.admin? %>
-                <%= link_to 'Delete', employee_path(i), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                <div class="w-1/6 text-right">
+                  <%= link_to '-', employee_path(i), class: 'btn-delete', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                </div>
               <% end %>
             </h4>
           </div>

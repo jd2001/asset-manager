@@ -1,0 +1,21 @@
+<div class="bg-gray-200 rounded shadow-lg">
+  <div class="p-2">
+    <h4 class="flex bg-gray-300 rounded p-2">
+      <div class="w-5/6">
+        <%= link_to company.name, edit_company_path(company), class: "#{ 'disabled' if !current_user.admin? }" %>
+      </div>
+      <% if current_user.admin? %>
+        <div class="w-1/6 text-right">
+          <%= link_to '-', company_path(company), class: 'btn-delete', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </div>
+      <% end %>
+    </h4>
+  </div>
+  <div class="text-sm px-1">
+    <div class="w-full p-2">
+      <div class="bg-gray-100 rounded p-1 text-gray-700 shadow-sm">
+        Employees: <%= company.employees.count %>
+      </div>
+    </div>
+  </div>
+</div>
