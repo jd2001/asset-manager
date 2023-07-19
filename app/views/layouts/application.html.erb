@@ -12,11 +12,13 @@
   </head>
 
   <body class="font-mono">
-    <% flash.each do |type, msg| %>
-      <div>
-        <%= msg %>
-      </div>
-    <% end %>
+    <div class="flex justify-center" data-controller="flash">
+      <% flash.each do |type, msg| %>
+        <div class="text-white bg-green-400 rounded-lg p-2 mt-2" style="position: absolute; z-index: 2;">
+          <%= msg %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
